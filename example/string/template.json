@@ -1,0 +1,8 @@
+{
+    "type":"String",
+    "default":"allalal",
+    "required":false,
+    "checks":{
+        "RegExp":"^[a-z]+$"
+    }
+}

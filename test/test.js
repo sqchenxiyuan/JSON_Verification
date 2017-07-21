@@ -1,4 +1,4 @@
-const biu = require("../index.js");
+const biu = require("../src/index.js");
 
 const mark = {
     type:String,//类型
