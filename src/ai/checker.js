@@ -1,7 +1,7 @@
 class Checker {
 
     constructor(checkFun) {
-        if(typeof checkFun === 'function') {
+        if (typeof checkFun !== 'function') {
             throw TypeError("checkfun need a function")
         }
         this.checkFun = checkFun

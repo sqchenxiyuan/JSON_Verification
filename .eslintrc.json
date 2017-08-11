@@ -19,7 +19,7 @@
         "computed-property-spacing":"warn",//[]获取属性时内部不能加空格
         "func-call-spacing":"warn",//函数调用时之间不能有空格
         "key-spacing":["warn",{"beforeColon":false,"afterColon":true}],//对象键值对间不能有空格
-        "keyword-spacing":["warn",{"before":true,"after":false}],//关键词前后要有空格
+        "keyword-spacing":["warn",{"before":true,"after":true}],//关键词前后要有空格
         "space-infix-ops":["error", {"int32Hint": false}],//等号前后加空格
         "space-unary-ops":["warn",{"words":true,"nonwords":false}],//一些一元运算需要前后加空格
         "space-before-blocks":"warn",//{}前要加空格

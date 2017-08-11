@@ -1,15 +1,33 @@
-const JVer = require("../src/index.js");
+const checkMacine = require("../src/ai/macine")
+const stringChecker = require("../src/base-checker/string-type-checker")
 
-var jver = new JVer();
+const macine = new checkMacine()
 
+macine.appendType(stringChecker)
 
-var data = "123";
-var tpl = {
-    type:"string",
-    RegExp:"^23"
+try {
+    macine.check("123", {
+        type: "string"
+    })
+    console.log("success")
+} catch (err) {
+    throw err
 }
 
-jver.runCheck(data, tpl);
+
+
+// const JVer = require("../src/index.js");
+
+// var jver = new JVer();
+
+
+// var data = "123";
+// var tpl = {
+//     type:"string",
+//     RegExp:"^23"
+// }
+
+// jver.runCheck(data, tpl);
 
 
 
