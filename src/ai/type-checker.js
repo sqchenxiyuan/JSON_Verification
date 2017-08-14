@@ -30,6 +30,7 @@ class TypeChecker extends Checker {
         let activePlugins = []
         for (let key in template) {
             let popertyReuired = this.popertyReuiredMap[key]
+            if(!popertyReuired) continue
             popertyReuired.forEach(index => {
                 let pluginReuired = this.pluginReuiredMap[index]
                 pluginReuired.count++
@@ -40,7 +41,7 @@ class TypeChecker extends Checker {
             })
         }
 
-        popertyReuired.forEach(index => {
+        this.pluginReuiredMap.forEach(index => {
             let pluginReuired = this.pluginReuiredMap[index]
             pluginReuired.count = 0
         })
