@@ -1,13 +1,16 @@
 const checkMacine = require("../src/ai/macine")
 const stringChecker = require("../src/base-checker/string-type-checker")
+const stringPluginRegExp = require("../src/base-plugin/string-plugin-checker-regexp")
 
 const macine = new checkMacine()
 
 macine.appendType(stringChecker)
+stringChecker.appendPlugin(stringPluginRegExp)
 
 try {
     macine.check("123", {
-        type: "string"
+        type: "string",
+        RegExp:"\\d"
     })
     console.log("success")
 } catch (err) {

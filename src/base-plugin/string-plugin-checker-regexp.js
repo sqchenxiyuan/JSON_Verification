@@ -2,7 +2,7 @@ let PluginChecker = require("../ai/plugin-checker")
 
 let stringRegexp = new PluginChecker({
     dependentProperties: ["RegExp"],
-    check: function(target, tpl) {
+    checkFun: function(target, tpl) {
         if (tpl.RegExp) {
             let reg = new RegExp(tpl.RegExp)
             if (!reg.test(target)) {

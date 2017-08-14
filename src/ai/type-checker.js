@@ -41,10 +41,7 @@ class TypeChecker extends Checker {
             })
         }
 
-        this.pluginReuiredMap.forEach(index => {
-            let pluginReuired = this.pluginReuiredMap[index]
-            pluginReuired.count = 0
-        })
+        this.pluginReuiredMap.forEach(data => data.count = 0)
 
         activePlugins.forEach(plugin => {
             plugin.check(target, template, machine)
