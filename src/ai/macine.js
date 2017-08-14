@@ -1,9 +1,19 @@
 const TypeChecker = require('./type-checker')
 
+//string
+const stringChecker = require("../base-checker/type-checker-string")
+stringChecker.appendPlugin(require("../base-plugin/string-plugin-checker-regexp"))//正则表达式插件
+
+//number
+const numberChecker = require("../base-checker/type-checker-number")
+numberChecker.appendPlugin(require("../base-plugin/number-plugin-checker-min"))//最小
+numberChecker.appendPlugin(require("../base-plugin/number-plugin-checker-max"))//最大
+
 class checkMacine {
     constructor() {
 
         this.typeMap = {} //* 类型集合
+        this._defaultInit()
     }
 
     check(target, template) {
@@ -37,6 +47,11 @@ class checkMacine {
         } else {
             throw SyntaxError("append type only support 2 arguments")
         }
+    }
+
+    _defaultInit() {
+        this.appendType(stringChecker)
+        this.appendType(numberChecker)
     }
 }
 
