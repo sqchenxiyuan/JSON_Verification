@@ -1,6 +1,6 @@
 const TypeChecker = require("../ai/type-checker")
 
-let string = new TypeChecker({
+let number = new TypeChecker({
     typeName: 'number',
     checkFun: function(target, template, machine) {
         if (typeof target !== 'number') {
@@ -9,4 +9,4 @@ let string = new TypeChecker({
     }
 })
 
-module.exports = string
+module.exports = number

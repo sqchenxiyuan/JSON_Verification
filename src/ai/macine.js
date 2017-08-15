@@ -9,6 +9,13 @@ const numberChecker = require("../base-checker/type-checker-number")
 numberChecker.appendPlugin(require("../base-plugin/number-plugin-checker-min"))//最小
 numberChecker.appendPlugin(require("../base-plugin/number-plugin-checker-max"))//最大
 
+//boolean
+const booleanChecker = require("../base-checker/type-checker-boolean")
+
+//null
+const nullChecker = require("../base-checker/type-checker-null")
+
+
 class checkMacine {
     constructor() {
 
@@ -52,6 +59,8 @@ class checkMacine {
     _defaultInit() {
         this.appendType(stringChecker)
         this.appendType(numberChecker)
+        this.appendType(booleanChecker)
+        this.appendType(nullChecker)
     }
 }
 
